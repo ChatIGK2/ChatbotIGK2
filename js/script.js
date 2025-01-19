@@ -79,6 +79,16 @@ function showInitialMessages() {
     const messagesContainer = document.querySelector('.messages-container');
     if (messagesContainer) {
         messagesContainer.innerHTML = '';
+        
+        // Aggiungi il messaggio di benvenuto
+        const currentLang = getCurrentLanguage();
+        const welcomeMessages = {
+            it: "Ciao! 👋 Sono l'assistente virtuale di IGK2. Come posso aiutarti oggi?",
+            en: "Hi! 👋 I'm IGK2's virtual assistant. How can I help you today?",
+            de: "Hallo! 👋 Ich bin der virtuelle Assistent von IGK2. Wie kann ich Ihnen heute helfen?",
+            es: "¡Hola! 👋 Soy el asistente virtual de IGK2. ¿Cómo puedo ayudarle hoy?"
+        };
+        addMessage(welcomeMessages[currentLang] || welcomeMessages.it);
     }
 
     // Aspetta un momento e poi mostra le domande
@@ -88,7 +98,7 @@ function showInitialMessages() {
         } else {
             console.error('displayClickableQuestions function not found');
         }
-    }, 100);
+    }, 500);
 }
 
 // Inizializzazione quando il documento è pronto
