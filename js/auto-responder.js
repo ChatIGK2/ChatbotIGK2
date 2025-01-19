@@ -186,31 +186,35 @@ Aquí hay algunas preguntas relacionadas sobre <span style='color: #007bff'>IGK2
     }
 };
 
-// Funzione per trovare la risposta migliore
-function findBestResponse(userInput) {
+// Funzione per trovare la migliore risposta
+function findBestResponse(userMessage) {
     const currentLang = getCurrentLanguage();
     const langResponses = responses[currentLang] || responses.it;
     
-    // Converti l'input dell'utente in minuscolo per il confronto
-    userInput = userInput.toLowerCase().trim();
+    // Normalizza il messaggio dell'utente (rimuovi punteggiatura e converti in minuscolo)
+    const normalizedMessage = userMessage.toLowerCase()
+        .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    // Cerca corrispondenze esatte nelle chiavi
+    for (const [key, response] of Object.entries(langResponses)) {
+        if (key.toLowerCase() === normalizedMessage) {
+            return response;
+        }
+    }
     
-    // Mappa delle parole chiave per ogni risposta
+    // Cerca nelle parole chiave
     const keywordMap = {
         "Cos'è IGK2?": ['cos è igk2', 'cosa è igk2', 'che cosa è igk2', 'che cos è igk2'],
         "Quanto spesso va applicato IGK2?": ['quanto spesso', 'spessore', 'quanto è spesso', 'spesso è'],
         "Quali sono i vantaggi di IGK2?": ['vantaggi', 'vantaggio', 'benefici', 'beneficio', 'meglio', 'differenza', 'confronto']
     };
-    
-    // Cerca corrispondenze nelle parole chiave
-    for (const [responseKey, keywords] of Object.entries(keywordMap)) {
-        // Controlla se l'input contiene almeno una delle parole chiave
-        for (const keyword of keywords) {
-            if (userInput.includes(keyword)) {
-                return langResponses[responseKey];
-            }
+    for (const [key, keywords] of Object.entries(keywordMap)) {
+        if (keywords.some(keyword => normalizedMessage.includes(keyword))) {
+            return langResponses[key] || langResponses.default;
         }
     }
     
-    // Se non trova corrispondenze, restituisce la risposta di default
     return langResponses.default;
 }
