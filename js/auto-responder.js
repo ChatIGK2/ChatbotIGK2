@@ -1,74 +1,3 @@
-// Funzione per ottenere la lingua corrente
-function getCurrentLanguage() {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('lang') || 'it';
-}
-
-// Funzione per trovare la migliore risposta
-window.findBestResponse = function(userMessage) {
-    const currentLang = getCurrentLanguage();
-    const langResponses = responses[currentLang] || responses.it;
-    
-    // Normalizza il messaggio dell'utente (rimuovi punteggiatura e converti in minuscolo)
-    const normalizedMessage = userMessage.toLowerCase()
-        .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()¿?]/g, '')
-        .replace(/\s+/g, ' ')
-        .trim();
-
-    console.log('Messaggio normalizzato:', normalizedMessage); // Debug
-
-    // Cerca corrispondenze esatte nelle chiavi
-    for (const [key, response] of Object.entries(langResponses)) {
-        const normalizedKey = key.toLowerCase().replace(/[¿?]/g, '').trim();
-        console.log('Confronto chiave:', normalizedKey); // Debug
-        if (normalizedKey === normalizedMessage) {
-            return response;
-        }
-    }
-    
-    // Cerca nelle parole chiave
-    for (const [key, keywords] of Object.entries(keywordMap)) {
-        console.log('Controllo keywords per:', key); // Debug
-        if (keywords.some(keyword => {
-            const matches = normalizedMessage.includes(keyword.toLowerCase());
-            console.log('Keyword:', keyword, 'Matches:', matches); // Debug
-            return matches;
-        })) {
-            return langResponses[key] || langResponses.default;
-        }
-    }
-    
-    return langResponses.default;
-};
-
-// Mappa delle parole chiave per ogni risposta e lingua
-const keywordMap = {
-    // Italiano
-    "Cos'è IGK2?": ['cos è igk2', 'cosa è igk2', 'che cosa è igk2', 'che cos è igk2', 'cos e igk2', 'cosa e igk2'],
-    "Quanto spesso va applicato IGK2?": ['quanto spesso', 'spessore', 'quanto è spesso', 'spesso è', 'quanto e spesso'],
-    "Quali sono i vantaggi di IGK2?": ['vantaggi', 'vantaggio', 'benefici', 'beneficio', 'meglio', 'differenza', 'confronto'],
-    "Come si applica IGK2?": ['come si applica', 'applicazione', 'come applicare', 'applicare igk2', 'come si usa', 'come usare'],
-    
-    // English
-    "What is IGK2?": ['what is igk2', 'what\'s igk2', 'tell me about igk2', 'explain igk2'],
-    "How often should IGK2 be applied?": ['how thick', 'thickness', 'how often', 'application thickness'],
-    "What are the advantages of IGK2?": ['advantages', 'benefits', 'better', 'difference', 'comparison', 'compare'],
-    "How is IGK2 applied?": ['how to apply', 'application', 'apply igk2', 'how to use', 'usage', 'instructions'],
-    
-    // Deutsch
-    "Was ist IGK2?": ['was ist igk2', 'erkläre igk2', 'erzähl mir von igk2'],
-    "Wie oft sollte IGK2 aufgetragen werden?": ['wie dick', 'dicke', 'wie oft', 'auftragsstärke'],
-    "Was sind die Vorteile von IGK2?": ['vorteile', 'nutzen', 'besser', 'unterschied', 'vergleich'],
-    "Wie wird IGK2 aufgetragen?": ['wie auftragen', 'anwendung', 'auftragen', 'wie benutzen', 'gebrauchsanweisung'],
-    
-    // Español
-    "¿Qué es IGK2?": ['que es igk2', 'qué es igk2', 'explica igk2', 'dime sobre igk2'],
-    "¿Cuántas veces debe aplicarse IGK2?": ['qué grosor', 'cual es el grosor', 'cuántas veces', 'espesor'],
-    "¿Cuáles son las ventajas de IGK2?": ['ventajas', 'beneficios', 'mejor', 'diferencia', 'comparación', 'comparar'],
-    "¿Cómo se aplica IGK2?": ['cómo se aplica', 'aplicación', 'como aplicar', 'instrucciones', 'como usar']
-};
-
-// Risposte in diverse lingue
 const responses = {
     it: {
         "Cos'è IGK2?": "<div style='margin-bottom: 20px'><span style='color: #007bff'>IGK2</span> utilizza una rivoluzionaria nanotecnologia a base di silicio. Le molecole di silicio di dimensioni nanometriche penetrano e riempiono anche le più piccole fessure nelle superfici delle pareti, creando una barriera termica altamente efficace.</div>\
@@ -398,4 +327,43 @@ Preguntas relacionadas:\
 </div>",
         "default": "Lo siento, no entendí su pregunta. ¿Podría reformularla de otra manera?"
     }
+};
+
+// Funzione per trovare la migliore risposta
+window.findBestResponse = function(userMessage) {
+    const currentLang = getCurrentLanguage();
+    const langResponses = responses[currentLang] || responses.it;
+    
+    // Normalizza il messaggio dell'utente (rimuovi punteggiatura e converti in minuscolo)
+    const normalizedMessage = userMessage.toLowerCase()
+        .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()¿?']/g, '')  // Aggiunto l'apostrofo
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    console.log('Messaggio normalizzato:', normalizedMessage); // Debug
+
+    // Cerca nelle parole chiave prima delle corrispondenze esatte
+    for (const [key, keywords] of Object.entries(keywordMap)) {
+        console.log('Controllo keywords per:', key); // Debug
+        if (keywords.some(keyword => {
+            const matches = normalizedMessage.includes(keyword.toLowerCase());
+            console.log('Keyword:', keyword, 'Matches:', matches); // Debug
+            return matches;
+        })) {
+            return langResponses[key] || langResponses.default;
+        }
+    }
+
+    // Se non trova nelle keywords, cerca corrispondenze esatte nelle chiavi
+    for (const [key, response] of Object.entries(langResponses)) {
+        const normalizedKey = key.toLowerCase()
+            .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()¿?']/g, '')  // Aggiunto l'apostrofo
+            .trim();
+        console.log('Confronto chiave:', normalizedKey); // Debug
+        if (normalizedKey === normalizedMessage) {
+            return response;
+        }
+    }
+    
+    return langResponses.default;
 };
