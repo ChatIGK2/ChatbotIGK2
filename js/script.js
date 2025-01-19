@@ -105,6 +105,9 @@ function showInitialMessages() {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Chatbot inizializzato');
     
+    // Mostra subito il messaggio di benvenuto e le domande
+    showInitialMessages();
+    
     // Inizializza gli elementi dell'interfaccia
     const sendButton = document.querySelector('.send-button');
     const chatInput = document.querySelector('.chat-input');
@@ -125,7 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
     languageFlags.forEach(flag => {
         flag.addEventListener('click', () => {
             const lang = flag.getAttribute('data-lang');
-            window.location.href = `chat.html?lang=${lang}`;
+            const currentUrl = new URL(window.location.href);
+            currentUrl.searchParams.set('lang', lang);
+            window.location.href = currentUrl.toString();
+            showInitialMessages(); // Mostra il messaggio di benvenuto e le domande nella nuova lingua
         });
     });
     
@@ -158,7 +164,4 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open('https://econanotherm.com/', '_blank');
         });
     }
-
-    // Mostra il messaggio di benvenuto e le domande dopo un breve ritardo
-    setTimeout(showInitialMessages, 500);
 });
