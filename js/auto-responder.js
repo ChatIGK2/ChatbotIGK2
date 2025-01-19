@@ -216,20 +216,20 @@ function findBestResponse(userMessage) {
     
     // Normalizza il messaggio dell'utente (rimuovi punteggiatura e converti in minuscolo)
     const normalizedMessage = userMessage.toLowerCase()
-        .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '')
+        .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()¿?]/g, '')
         .replace(/\s+/g, ' ')
         .trim();
 
     // Cerca corrispondenze esatte nelle chiavi
     for (const [key, response] of Object.entries(langResponses)) {
-        if (key.toLowerCase() === normalizedMessage) {
+        if (key.toLowerCase().replace(/[¿?]/g, '') === normalizedMessage) {
             return response;
         }
     }
     
     // Cerca nelle parole chiave
     for (const [key, keywords] of Object.entries(keywordMap)) {
-        if (keywords.some(keyword => normalizedMessage.includes(keyword))) {
+        if (keywords.some(keyword => normalizedMessage.includes(keyword.toLowerCase()))) {
             return langResponses[key] || langResponses.default;
         }
     }
