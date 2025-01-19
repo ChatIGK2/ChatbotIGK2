@@ -15,16 +15,25 @@ window.findBestResponse = function(userMessage) {
         .replace(/\s+/g, ' ')
         .trim();
 
+    console.log('Messaggio normalizzato:', normalizedMessage); // Debug
+
     // Cerca corrispondenze esatte nelle chiavi
     for (const [key, response] of Object.entries(langResponses)) {
-        if (key.toLowerCase().replace(/[¿?]/g, '') === normalizedMessage) {
+        const normalizedKey = key.toLowerCase().replace(/[¿?]/g, '').trim();
+        console.log('Confronto chiave:', normalizedKey); // Debug
+        if (normalizedKey === normalizedMessage) {
             return response;
         }
     }
     
     // Cerca nelle parole chiave
     for (const [key, keywords] of Object.entries(keywordMap)) {
-        if (keywords.some(keyword => normalizedMessage.includes(keyword.toLowerCase()))) {
+        console.log('Controllo keywords per:', key); // Debug
+        if (keywords.some(keyword => {
+            const matches = normalizedMessage.includes(keyword.toLowerCase());
+            console.log('Keyword:', keyword, 'Matches:', matches); // Debug
+            return matches;
+        })) {
             return langResponses[key] || langResponses.default;
         }
     }
