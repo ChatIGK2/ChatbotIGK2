@@ -186,6 +186,29 @@ Aquí hay algunas preguntas relacionadas sobre <span style='color: #007bff'>IGK2
     }
 };
 
+// Mappa delle parole chiave per ogni risposta e lingua
+const keywordMap = {
+    // Italiano
+    "Cos'è IGK2?": ['cos è igk2', 'cosa è igk2', 'che cosa è igk2', 'che cos è igk2', 'cos e igk2', 'cosa e igk2'],
+    "Quanto spesso va applicato IGK2?": ['quanto spesso', 'spessore', 'quanto è spesso', 'spesso è', 'quanto e spesso'],
+    "Quali sono i vantaggi di IGK2?": ['vantaggi', 'vantaggio', 'benefici', 'beneficio', 'meglio', 'differenza', 'confronto'],
+    
+    // English
+    "What is IGK2?": ['what is igk2', 'what\'s igk2', 'tell me about igk2', 'explain igk2'],
+    "How often should IGK2 be applied?": ['how thick', 'thickness', 'how often', 'application thickness'],
+    "What are the advantages of IGK2?": ['advantages', 'benefits', 'better', 'difference', 'comparison', 'compare'],
+    
+    // Deutsch
+    "Was ist IGK2?": ['was ist igk2', 'erkläre igk2', 'erzähl mir von igk2'],
+    "Wie oft sollte IGK2 aufgetragen werden?": ['wie dick', 'dicke', 'wie oft', 'auftragsstärke'],
+    "Was sind die Vorteile von IGK2?": ['vorteile', 'nutzen', 'besser', 'unterschied', 'vergleich'],
+    
+    // Español
+    "¿Qué es IGK2?": ['que es igk2', 'qué es igk2', 'explica igk2', 'dime sobre igk2'],
+    "¿Cuántas veces debe aplicarse IGK2?": ['qué grosor', 'cual es el grosor', 'cuántas veces', 'espesor'],
+    "¿Cuáles son las ventajas de IGK2?": ['ventajas', 'beneficios', 'mejor', 'diferencia', 'comparación', 'comparar']
+};
+
 // Funzione per trovare la migliore risposta
 function findBestResponse(userMessage) {
     const currentLang = getCurrentLanguage();
@@ -205,11 +228,6 @@ function findBestResponse(userMessage) {
     }
     
     // Cerca nelle parole chiave
-    const keywordMap = {
-        "Cos'è IGK2?": ['cos è igk2', 'cosa è igk2', 'che cosa è igk2', 'che cos è igk2'],
-        "Quanto spesso va applicato IGK2?": ['quanto spesso', 'spessore', 'quanto è spesso', 'spesso è'],
-        "Quali sono i vantaggi di IGK2?": ['vantaggi', 'vantaggio', 'benefici', 'beneficio', 'meglio', 'differenza', 'confronto']
-    };
     for (const [key, keywords] of Object.entries(keywordMap)) {
         if (keywords.some(keyword => normalizedMessage.includes(keyword))) {
             return langResponses[key] || langResponses.default;
