@@ -131,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentUrl = new URL(window.location.href);
             currentUrl.searchParams.set('lang', lang);
             window.location.href = currentUrl.toString();
-            showInitialMessages(); // Mostra il messaggio di benvenuto e le domande nella nuova lingua
         });
     });
     
@@ -164,4 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open('https://econanotherm.com/', '_blank');
         });
     }
+});
+
+// Aggiungi un listener per quando la pagina è completamente caricata
+window.addEventListener('load', () => {
+    console.log('Pagina completamente caricata');
+    // Riprova a mostrare le domande dopo il caricamento completo
+    setTimeout(() => {
+        showInitialMessages();
+    }, 1000);
 });
