@@ -1,0 +1,28 @@
+Le alleghiamo bozza della dichiarazione da lei richiesta,
+
+Riguardo la terza cifra decimale, abbiamo riscontrato nella norma UNI EN ISO 10456 al punto 5 quanto segue:
+1. During calculations, no value shall be rounded to less than three significant figures.
+Traduzione:
+Durante i calcoli, nessun valore deve essere arrotondato a meno di tre cifre significative
+Abbiamo chiesto ad un esperto linguista di tradurre la frase, anche s‚ parlo fluentemente inglese, onde evitare ogni considerevole dubbio, inoltre abbiamo chiesto ad un fisico di spiegarci cosa significa l'affermazione cifra significativa e questa e stata la spiegazione:
+
+La prima cifra significativa Š la prima da sinistra diversa da zero
+
+Di seguito le riportiamo un estratto di Wikipedia:
+Identificazione delle cifre significative[modifica | modifica wikitesto]
+* La cifra pi— significativa Š sempre la prima da sinistra che sia diversa da zero;
+* La cifra meno significativa
+o in un valore intero, Š la prima da destra che sia diversa da zero,
+o in un valore con una parte frazionaria, Š l'ultima cifra a destra, anche se si tratta di uno zero;
+* Le cifre significative sono tutte quelle comprese tra la pi— significativa e la meno significativa
+Per esempio, 0,00057 ha due cifre significative.
+
+Secondo una dell 4 regole indicate dalla  UNI EN ISO 10456:
+* if ? =  0,08: rounding to nearest higher 0,001 W/(mK); 
+* Il valore massimo con tre cifre significative dovrebbe essere 0,00199 W/(mK);
+
+Abbiamo visto anche noi circolare una nota Enea dove affermano quanto segue:
+La norma UNI EN ISO 10456:2008 per valori di conduttivita' ? = 0,08 W/(mK) prevede l'arrotondamento per eccesso alla terza cifra decimale.
+Riteniamo che questa affermazione sia frutto di una cattiva traduzione della norma dall'inglese all'italiano, la norma e distribuita solo in lingua Inglese.
+Lasciamo quindi al progettista la facolt… di arrotondare alla terza cifra decimale
+

@@ -1,0 +1,64 @@
+Fate anche isolamenti per muri box per renderli a norma antincendio ecc?
+noi produciamo solo prodotti isolanti ma termicamente e non antincendio, quindi resistenti al fuoco.
+
+
+
+Buongiorno Luciano,
+a seguito di un colloquio con un ingegnere che si occupa di certificazioni ed asseverazioni per il bonus 110%, ci ä stato indicato che il DM requisiti minimi richiede che le prove di conducibilitÖ termiche dei cappotti siano state fatte nel rispetto della UNI EN ISO 10456:2008 e UNI EN ISO 10456:2008 per valori di conducibilitÖ ? = 0,08 W/(mK), mentre il certificato del cappotto Econanosil parla di EN 12667:2002. In caso contrario non potrebbe essere certificato ed asseverato.
+Ti allego il documento dell' Associazione Nazionale dei termotecnici in cui si parla di queste certificazioni, unitamente ai DM requisiti minimi in cui se ne parla.
+Potresti aiutarci a capire se c' ä una soluzione, e nel caso quale potrebbe essere?
+
+Come indicato nel Documento di approfondimento allegato in riferimento al materiale isolante termico con marcatura CE:
+
+Nel caso (nostro) il materiale ä dotato di norma di prodotto armonizzata come materiale isolante.
+In questi casi il produttore indica in marcatura CE, DoP e schede tecniche, la conduttivitÖ termica con valori di lambda D dichiarati  (resistenza termica dichiarati RD  )
+
+Il valore di Lambda dichiarato comporta che il prodotto ä stato testato in condizioni standard, con prove standard, da laboratorio esterno notificato a livello europeo e in accordo con norme UNI EN.
+
+Il produttore indicando il valore di conduttivitÖ termica Lambda D (in marcatura CE e DoP) e la norma di prodotto armonizzata del materiale isolante risponde ai requisiti richiesti dal legislatore.
+Le informazioni dichiarate nell'etichetta della marcatura CE e nella DOP (dichiarazione di prestazione), sono statisticamente rappresentative in quanto ricavate mediante procedure di controllo costante della produzione (FPC Factory Production Control) e di valutazione delle prestazioni mediante norme codificate riconosciute a livello
+europeo.
+
+La marcatura CE oltre che la validitÖ dei metodi di prova e la rappresentazione statistica del valore prevede quindi anche un costante controllo di produzione; un prodotto privo di sistemi di verifica di costanza della prestazione non puï garantire che la prestazione corrisponda a quella dichiarata.
+
+
+Le regole e le procedure previste dalle norme tecniche per la valutazione di materiali isolanti omogenei richiamano poi l'impiego del valoredi conduttivitÖ termica dichiarata con riferimento alla UNI EN ISO 10456 per quanto riguarda le modalitÖ statistiche di rappresentativitÖ del dato. Tale norma prevede infatti delle forti maggiorazioni della
+conduttivitÖ in funzione del numero di misure effettuate.
+
+Il nostro prodotto eco2, rispettando quanto sopra indicato, segue le regole restrittive della valutazione della conduttivitÖ dichiarata in accordo con UNI EN ISO 10456, tale norma  la trova indicata anche nel file dop allegato in corrispondenza della caratteristica della prestazione della conduttivitÖ.
+
+Cordiali saluti
+
+
+
+La certificazione?
+
+Le prestazione del prodotto sono conformi all'insieme delle prestazioni dichiarate nel Dop, che accompagna la marcatura CE,
+ed in conformitÖ al regolamento prodotti da costruzione (UE) n. 305/2011.
+
+
+
+Mi pare che nonostante i risultati vantati non sia stato testato da organismo riconosciuto e quindi di non essere accettato da ENEA con rischio di esclusione dai contributi
+
+il prodotto eco2 ä in possesso di certificazioni CE e CAM, pertanto con i requisiti necessari per l'ottenimento dei contributi.
+
+Buongiorno,
+la ditta che si occuperÖ a breve del cappotto della mia casa, mi ha proposto il vostro prodotto econonasil eco 2.
+ho girato le vostre certificazioni al mio asseveratore ma dice che la certificazione CAM non ä valida perchä non ä presente il "bollino" CAM (passatemi il termine) e perchä non vi trova sul prezzario DEI di riferimento.
+potreste gentilmente rispondermi riguardo alle certificazioni e alla voce del prezzario cosç da poter confermare a breve i lavori e iniziare usufruendo del bonus 110?
+Buongiorno, in riferimento ai suoi quesiti, le rispondiamo quanto segue:
+1- non esiste alcun bollino CAM, il prodotto Econanosil ECO2 ä un materiale che rispetta i requisiti ambientali minimi (CAM),
+in quanto oltre a non contenere i prodotti indicati nell' art. 2.4.2.9. del DM 11.10.2017, rispetta e soddisfa anche i criteri indicati in riferimento alla materia riciclata essendo in possesso di:
+ una certificazione di prodotto rilasciata da un organismo di valutazione della conformitÖ che attesti il contenuto di riciclato attraverso l'esplicitazione del bilancio di massa che consiste nella verifica di una dichiarazione ambientale autodichiarata, conforme alla norma ISO 14021, che alleghiamo.
+2-  ci sono delle voci del prezziario DEI che assomigliano al ns prodotto anche se sono dei termoriflettenti.
+
+In alternativa, il tecnico abilitato potrÖ determinare i nuovi prezzi in maniera analitica, secondo un procedimento che tenga conto di tutte le variabili che intervengono nella definizione dell'importo stesso (analisi dei prezzi).
+
+Cordiali saluti
+
+
+Buongiorno, ci sono varie voci del prezziario DEI che si avvicinano al prodotto A75047, B15162, B15159,
+
+
+In carenza di voci relative agli interventi o parte di essi, il tecnico determina i costi in maniera analitica. (vedi allegato)
+

@@ -1,0 +1,4 @@
+Tabella Comparativa - Coefficienti Lambda dei Materiali Isolanti
+Materiale IsolanteCoefficiente Lambda (W/mK)NoteIGK2 Nano Cappotto0.002-0.004Nanotecnologia avanzataLana di Roccia0.035-0.040Materiale mineralePolistirene Espanso (EPS)0.035-0.040Materiale sinteticoPolistirene Estruso (XPS)0.030-0.040Materiale sinteticoPoliuretano Espanso (PUR)0.022-0.035Materiale sinteticoLana di Vetro0.032-0.040Materiale mineraleSughero0.040-0.045Materiale naturaleFibra di Legno0.040-0.050Materiale naturaleAerogel0.013-0.020Materiale sintetico avanzato
+Nota: I valori lambda pi— bassi indicano un migliore isolamento termico.
+Fonte: Valori medi di riferimento da normative e schede tecniche dei produttori.

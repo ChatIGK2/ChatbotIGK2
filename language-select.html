@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Seleziona Lingua - IGK2 Chat Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url('/assets/images/nano.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        html {
+            height: -webkit-fill-available;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: -1;
+        }
+
+        .logo-container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .logo-image {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            object-fit: contain;
+        }
+
+        .welcome-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .welcome-text h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            color: #00ffff;
+            text-shadow: 0 0 15px rgba(0, 168, 255, 0.8),
+                         0 0 20px rgba(0, 168, 255, 0.4);
+            font-weight: 700;
+            margin-bottom: 10px;
+            transition: opacity 0.5s ease;
+            line-height: 1.2;
+        }
+
+        .welcome-text p {
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(0, 168, 255, 0.8),
+                        0 0 20px rgba(0, 168, 255, 0.4);
+            font-weight: 500;
+            transition: opacity 0.5s ease;
+            line-height: 1.4;
+            padding: 0 10px;
+            max-width: 90vw;
+        }
+
+        .language-selection {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 300px;
+            margin: auto;
+        }
+
+        .language-button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 20px;
+            background: rgba(0, 128, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .language-button:hover {
+            background: rgba(0, 150, 0, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .language-button img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 15px;
+                justify-content: space-around;
+            }
+
+            .logo-container {
+                max-width: 200px;
+                margin-bottom: 10px;
+            }
+
+            .welcome-text {
+                margin-bottom: 10px;
+            }
+
+            .welcome-text h1 {
+                font-size: clamp(1.2rem, 4vw, 1.8rem);
+                padding: 0 5px;
+                margin-bottom: 5px;
+            }
+
+            .welcome-text p {
+                font-size: clamp(0.8rem, 2.5vw, 1rem);
+                padding: 0 10px;
+                margin-bottom: 5px;
+            }
+
+            .language-button span {
+                font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            }
+
+            .language-button {
+                padding: 8px 15px;
+            }
+
+            .language-button img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="/assets/images/logounico.png" alt="IGK2 Logo" class="logo-image">
+        </div>
+
+        <div class="welcome-text">
+            <h1 id="welcome-title"></h1>
+            <p id="welcome-subtitle"></p>
+        </div>
+
+        <div class="language-selection">
+            <a href="/chat?lang=it" class="language-button">
+                <img src="/assets/images/flags/it.svg" alt="Italiano">
+                <span>Italiano</span>
+            </a>
+            <a href="/chat?lang=en" class="language-button">
+                <img src="/assets/images/flags/en.svg" alt="English">
+                <span>English</span>
+            </a>
+            <a href="/chat?lang=de" class="language-button">
+                <img src="/assets/images/flags/de.svg" alt="Deutsch">
+                <span>Deutsch</span>
+            </a>
+            <a href="/chat?lang=es" class="language-button">
+                <img src="/assets/images/flags/es.svg" alt="Español">
+                <span>Español</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            it: {
+                title: "Benvenuto in IGK2 Chat Assistant",
+                subtitle: "Seleziona la tua lingua preferita per iniziare"
+            },
+            es: {
+                title: "Bienvenido a IGK2 Chat Assistant",
+                subtitle: "Seleccione su idioma preferido para comenzar"
+            },
+            en: {
+                title: "Welcome to IGK2 Chat Assistant",
+                subtitle: "Select your preferred language to begin"
+            },
+            de: {
+                title: "Willkommen bei IGK2 Chat Assistant",
+                subtitle: "Wählen Sie Ihre bevorzugte Sprache aus, um zu beginnen"
+            }
+        };
+
+        const languages = ['it', 'es', 'en', 'de'];
+        let currentIndex = 0;
+
+        function updateTexts() {
+            const currentLang = languages[currentIndex];
+            const texts = translations[currentLang];
+            
+            document.getElementById('welcome-title').style.opacity = '0';
+            document.getElementById('welcome-subtitle').style.opacity = '0';
+            
+            setTimeout(() => {
+                document.getElementById('welcome-title').textContent = texts.title;
+                document.getElementById('welcome-subtitle').textContent = texts.subtitle;
+                document.getElementById('welcome-title').style.opacity = '1';
+                document.getElementById('welcome-subtitle').style.opacity = '1';
+            }, 500);
+
+            currentIndex = (currentIndex + 1) % languages.length;
+        }
+
+        setInterval(updateTexts, 3000);
+        document.addEventListener('DOMContentLoaded', updateTexts);
+    </script>
+</body>
+</html>
