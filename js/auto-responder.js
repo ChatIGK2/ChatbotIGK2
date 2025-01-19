@@ -77,7 +77,7 @@ Ecco alcune domande correlate su <span style='color: #007bff'>IGK2</span>:\
 </div>",
         "Quali sono i vantaggi di IGK2?": "Ecco un confronto tra <span style='color: #007bff'>IGK2</span> e il rivestimento tradizionale:\n\n1) Spessore:\n   ✅ IGK2: Solo 4-8 mm\n   ❌ Tradizionale: 8-12 cm\n\n2) Isolamento Termico:\n   ✅ IGK2: Lambda 0,0019 W/mK\n   ❌ Tradizionale: Lambda 0,035-0,040 W/mK\n\n3) Applicazione:\n   ✅ IGK2: Veloce, come normale rivestimento armato\n   ❌ Tradizionale: Complessa, richiede tasselli\n\n4) Traspirabilità:\n   ✅ IGK2: Altamente traspirante\n   ❌ Tradizionale: Può creare condensa",
         "Come si applica IGK2?": "<div style='margin-bottom: 20px'>\
-Per applicare IGK2 correttamente, segui questi passaggi:\
+Per applicare <span style='color: #007bff'>IGK2</span> correttamente, segui questi passaggi:\
 </div>\
 \
 <div style='margin-bottom: 10px'>\
@@ -89,7 +89,7 @@ Per applicare IGK2 correttamente, segui questi passaggi:\
 </div>\
 \
 <div style='margin-bottom: 10px'>\
-3. <span style='color: #007bff'>Prima mano di IGK2</span>: applicare con spatola dentata (denti da 1cm) per garantire uno spessore uniforme. Il rendimento è di circa 1 litro per mm per m².\
+3. <span style='color: #007bff'>Prima mano di <span style='color: #007bff'>IGK2</span></span>: applicare con spatola dentata (denti da 1cm) per garantire uno spessore uniforme. Il rendimento è di circa 1 litro per mm per m².\
 </div>\
 \
 <div style='margin-bottom: 10px'>\
@@ -97,7 +97,7 @@ Per applicare IGK2 correttamente, segui questi passaggi:\
 </div>\
 \
 <div style='margin-bottom: 10px'>\
-5. <span style='color: #007bff'>Seconda mano di IGK2</span>: applicare dopo 12-24 ore dalla prima mano, coprendo completamente la rete in fibra di vetro.\
+5. <span style='color: #007bff'>Seconda mano di <span style='color: #007bff'>IGK2</span></span>: applicare dopo 12-24 ore dalla prima mano, coprendo completamente la rete in fibra di vetro.\
 </div>\
 \
 <div style='margin-bottom: 10px'>\
@@ -114,6 +114,22 @@ Per applicare IGK2 correttamente, segui questi passaggi:\
 \
 <div style='margin-bottom: 10px'>\
 9. <span style='color: #007bff'>Finitura</span>: applicare la finitura liquida o in pasta desiderata.\
+</div>\
+\
+<div style='margin-bottom: 20px'>\
+Per una dimostrazione dettagliata, clicca sul pulsante <span style='color: #dc3545'>Video Esplicativi del Prodotto</span>.\
+</div>\
+\
+<div style='margin-bottom: 15px'>\
+Ecco altre domande correlate che potrebbero interessarti:\
+</div>\
+\
+<div style='margin-left: 20px'>\
+1. <a href='#' onclick='return false;' style='color: #007bff; text-decoration: none;'>Quali strumenti servono?</a><br>\
+2. <a href='#' onclick='return false;' style='color: #007bff; text-decoration: none;'>Quanto tempo richiede l'asciugatura?</a><br>\
+3. <a href='#' onclick='return false;' style='color: #007bff; text-decoration: none;'>Si può applicare su pareti già dipinte?</a><br>\
+4. <a href='#' onclick='return false;' style='color: #007bff; text-decoration: none;'>Chi può installare <span style='color: #007bff'>IGK2</span>?</a><br>\
+5. <a href='#' onclick='return false;' style='color: #007bff; text-decoration: none;'>Come si prepara la superficie?</a>\
 </div>",
         "default": "Mi dispiace, non ho capito la tua domanda. Potresti riformularla in modo diverso?"
     },
