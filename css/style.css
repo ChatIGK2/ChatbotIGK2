@@ -176,13 +176,43 @@ body {
 }
 
 .messages-container {
-    overflow-y: auto;
     flex: 1;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.messages-container button {
+    padding: 10px 15px;
+    text-align: left;
+    background-color: #E0FFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0;
+    color: #333;
+    font-size: 14px;
+    width: 100%;
+    height: auto;
+}
+
+.messages-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.messages-container button:active {
+    top: 2px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.message, .bot-message, .user-message {
+    display: none;
 }
 
 .chat-input-container {
@@ -214,33 +244,6 @@ body {
 
 .send-button:hover {
     background-color: #0056b3;
-}
-
-.user-message, .bot-message {
-    padding: 10px 15px;
-    border-radius: 8px;
-    max-width: 70%;
-    word-wrap: break-word;
-    margin: 10px 0;
-    animation: messageAppear 0.3s ease-out;
-}
-
-@keyframes messageAppear {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.user-message {
-    align-self: flex-end;
-    background-color: #007bff;
-    color: white;
-}
-
-.bot-message {
-    align-self: flex-start;
-    background-color: #f1f1f1;
-    color: #333;
-    border-left: 4px solid #007bff;
 }
 
 .right-column {

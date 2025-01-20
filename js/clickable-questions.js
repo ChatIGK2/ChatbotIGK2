@@ -110,99 +110,41 @@ const questionsList_es = [
 
 // Funzione per mostrare le domande cliccabili
 function displayClickableQuestions() {
+    const currentLang = getCurrentLanguage();
     const messagesContainer = document.querySelector('.messages-container');
-    if (!messagesContainer) {
-        console.error('Messages container not found');
-        return;
-    }
+    messagesContainer.innerHTML = ''; // Pulisce il contenitore
 
-    // Get current language
-    const currentLanguage = getCurrentLanguage();
-
-    // Creo il container per le domande
-    const questionsContainer = document.createElement('div');
-    questionsContainer.className = 'bot-message';
-    
-    // Aggiungo il messaggio introduttivo
-    const introMessage = document.createElement('p');
-    introMessage.style.fontWeight = 'bold';
-    introMessage.style.marginBottom = '10px';
-    introMessage.textContent = questionIntroMessages[currentLanguage] || questionIntroMessages.it;
-    questionsContainer.appendChild(introMessage);
-    
-    // Creo il container per i pulsanti delle domande
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.className = 'questions-buttons';
-    buttonsContainer.style.display = 'grid';
-    buttonsContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
-    buttonsContainer.style.gap = '5px';
-    buttonsContainer.style.maxHeight = '400px';
-    buttonsContainer.style.overflow = 'auto';
-    
-    // Ottengo le domande nella lingua corrente
-    let questions;
-    switch(currentLanguage) {
+    // Seleziona la lista di domande corretta in base alla lingua
+    let questionsList;
+    switch (currentLang) {
         case 'en':
-            questions = questionsList_en;
+            questionsList = questionsList_en;
             break;
         case 'de':
-            questions = questionsList_de;
+            questionsList = questionsList_de;
             break;
         case 'es':
-            questions = questionsList_es;
+            questionsList = questionsList_es;
             break;
         default:
-            questions = questionsList_it;
+            questionsList = questionsList_it;
     }
-    
-    // Creo i pulsanti per ogni domanda
-    questions.forEach(question => {
+
+    // Crea e aggiunge i pulsanti delle domande
+    questionsList.forEach(question => {
         const button = document.createElement('button');
-        button.className = 'question-button';
-        button.style.width = '100%';
-        button.style.padding = '8px';
-        button.style.border = '1px solid #ddd';
-        button.style.borderRadius = '4px';
-        button.style.background = '#f8f9fa';
-        button.style.cursor = 'pointer';
-        button.style.transition = 'all 0.2s';
-        button.style.textAlign = 'left';
-        button.style.whiteSpace = 'normal';
-        button.style.height = 'auto';
-        button.style.minHeight = '44px';
-        button.style.fontSize = '14px';
         button.textContent = question;
-        
-        // Aggiungi hover effect
-        button.onmouseover = () => {
-            button.style.background = '#e9ecef';
-            button.style.borderColor = '#ced4da';
-        };
-        button.onmouseout = () => {
-            button.style.background = '#f8f9fa';
-            button.style.borderColor = '#ddd';
-        };
-        
         button.onclick = () => handleQuestionClick(question);
-        buttonsContainer.appendChild(button);
+        messagesContainer.appendChild(button);
     });
-    
-    questionsContainer.appendChild(buttonsContainer);
-    messagesContainer.appendChild(questionsContainer);
-    
-    // Scroll to bottom
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
 // Funzione per gestire il click su una domanda
 function handleQuestionClick(question) {
-    const chatInput = document.querySelector('.chat-input');
+    const input = document.querySelector('.chat-input');
+    input.value = question;
     const sendButton = document.querySelector('.send-button');
-    
-    if (chatInput && sendButton) {
-        chatInput.value = question;
-        sendButton.click();
-    }
+    sendButton.click();
 }
 
 // Esporta le funzioni necessarie
