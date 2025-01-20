@@ -12,7 +12,7 @@ body {
 .chatbot-container {
     display: flex;
     width: 100%;
-    max-width: 800px; /* Larghezza massima uguale al titolo */
+    max-width: 1200px; /* Aumentato per mostrare tutto il titolo */
     margin: 0 auto;
     background: transparent;
 }
@@ -25,7 +25,7 @@ body {
     min-width: 0;
     padding: 20px;
     background: transparent;
-    max-width: 800px;
+    max-width: 1000px; /* Aumentato per mostrare tutto il titolo */
     margin: 0 auto;
 }
 
@@ -65,6 +65,7 @@ body {
     text-align: center;
     margin-bottom: 20px;
     background: rgba(255, 255, 255, 0.2); /* Sfondo opaco al 20% */
+    max-width: 1000px; /* Aumentato per allinearsi con il titolo */
 }
 
 .welcome-title {
@@ -72,10 +73,8 @@ body {
     margin-bottom: 15px;
     color: #007bff;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: auto; /* Permette al titolo di espandersi */
-    max-width: 100%; /* Limita la larghezza massima al 100% del contenitore */
+    width: 100%; /* Permette al titolo di usare tutto lo spazio disponibile */
+    text-align: center;
 }
 
 .welcome-message {
@@ -95,7 +94,7 @@ body {
     overflow-y: auto;
     background: transparent;
     margin-bottom: 0;
-    max-width: 800px; /* Allineato con il titolo */
+    max-width: 1000px; /* Aumentato per allinearsi con il titolo */
 }
 
 .language-flags-container {
