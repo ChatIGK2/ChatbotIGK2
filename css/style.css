@@ -32,7 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background: rgba(245, 245, 245, 0.9);
+    background: rgba(245, 245, 245, 0.5);
 }
 
 .logo-container {
@@ -54,14 +54,14 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: rgba(0, 123, 255, 0.9);
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .side-button:hover {
-    background-color: #0056b3;
+    background-color: rgba(0, 86, 179, 0.9);
 }
 
 /* Center column */
@@ -70,14 +70,14 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.5);
     position: relative;
 }
 
 .welcome-text-container {
     text-align: center;
     padding: 20px;
-    background: rgba(248, 249, 250, 0.9);
+    background: rgba(248, 249, 250, 0.5);
 }
 
 .welcome-title {
@@ -87,11 +87,11 @@ body {
 
 .welcome-message {
     font-size: 16px;
-    color: #666;
+    color: #333;
 }
 
 .language-flags-container {
-    display: none; /* Nascondiamo le bandiere nella chat */
+    display: none;
 }
 
 .messages-container {
@@ -109,20 +109,20 @@ body {
 }
 
 .message.user {
-    background-color: #007bff;
+    background-color: rgba(0, 123, 255, 0.9);
     color: white;
     margin-left: auto;
 }
 
 .message.bot {
-    background-color: rgba(241, 241, 241, 0.9);
+    background-color: rgba(241, 241, 241, 0.7);
     margin-right: auto;
 }
 
 .chat-input-container {
     padding: 20px;
-    background: rgba(248, 249, 250, 0.9);
-    border-top: 1px solid rgba(221, 221, 221, 0.5);
+    background: rgba(248, 249, 250, 0.5);
+    border-top: 1px solid rgba(221, 221, 221, 0.3);
     display: flex;
     gap: 10px;
 }
@@ -130,16 +130,17 @@ body {
 .chat-input {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(221, 221, 221, 0.5);
     border-radius: 5px;
     font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .send-button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: rgba(0, 123, 255, 0.9);
     color: white;
     cursor: pointer;
 }
@@ -151,7 +152,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background: rgba(245, 245, 245, 0.9);
+    background: rgba(245, 245, 245, 0.5);
 }
 
 .econanotherm-logo {
@@ -170,14 +171,14 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #28a745;
+    background-color: rgba(40, 167, 69, 0.9);
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .right-button:hover {
-    background-color: #218838;
+    background-color: rgba(33, 136, 56, 0.9);
 }
 
 /* Mobile styles */
@@ -241,7 +242,7 @@ body {
     top: 20px;
     right: 20px;
     padding: 15px;
-    background-color: #ff4444;
+    background-color: rgba(255, 68, 68, 0.9);
     color: white;
     border-radius: 5px;
     z-index: 9999;
