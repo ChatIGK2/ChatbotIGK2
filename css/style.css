@@ -62,15 +62,24 @@ body {
 
 .side-button,
 .right-button {
-    padding: 12px 20px;
+    padding: 15px 25px;
     border: none;
-    border-radius: 8px;
+    border-radius: 15px;
     color: white;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
-    z-index: 1;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 8px 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    transform: perspective(1000px) translateZ(0);
+    backface-visibility: hidden;
 }
 
 .side-button::before,
@@ -82,55 +91,64 @@ body {
     width: 100%;
     height: 100%;
     background: #E0FFFF;
-    opacity: 0.2;
-    transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    transform: translateY(3px);
     z-index: -1;
-}
-
-.side-button:hover::before,
-.right-button:hover::before {
-    transform: translateX(0);
 }
 
 .side-button:hover,
 .right-button:hover {
-    background-color: inherit; /* Mantiene il colore originale del pulsante */
+    transform: perspective(1000px) translateZ(10px);
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.15),
+        0 2px 4px rgba(0, 0, 0, 0.12),
+        inset 0 2px 2px rgba(255, 255, 255, 0.2),
+        inset 0 -2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.side-button:hover::before,
+.right-button:hover::before {
+    opacity: 0.2;
+    transform: translateY(0);
+}
+
+.side-button:active,
+.right-button:active {
+    transform: perspective(1000px) translateZ(-5px);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        0 1px 2px rgba(0, 0, 0, 0.08),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .side-button {
-    background-color: #4CAF50;
+    background: linear-gradient(145deg, #54c357, #45a049);
 }
 
 .side-button.docs-button {
-    background-color: #808080;
+    background: linear-gradient(145deg, #8a8a8a, #707070);
 }
 
 .right-button.video-button {
-    background-color: #ff0000;
+    background: linear-gradient(145deg, #ff1a1a, #e60000);
 }
 
 .right-button.site-button {
-    background-color: #007bff;
+    background: linear-gradient(145deg, #0088ff, #0066cc);
 }
 
 @keyframes pulseButton {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.02);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: perspective(1000px) translateZ(0); }
+    50% { transform: perspective(1000px) translateZ(5px); }
+    100% { transform: perspective(1000px) translateZ(0); }
 }
 
 .side-button,
 .right-button {
-    animation: pulseButton 2s infinite;
+    animation: pulseButton 3s infinite ease-in-out;
 }
 
 .side-button:hover,
