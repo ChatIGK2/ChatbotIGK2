@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Page</title>
+</head>
+<body style="padding: 20px;">
+    <h1>Test Pagina Debug</h1>
+    <p>Se vedi questo testo, la pagina HTML si carica correttamente.</p>
+    
+    <div id="test-jquery">Test jQuery in corso...</div>
+    <div id="test-scripts">Test Scripts in corso...</div>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        // Test jQuery
+        $(document).ready(function() {
+            $('#test-jquery').text('jQuery caricato correttamente');
+        });
+        
+        // Test caricamento scripts
+        function testScript(scriptName) {
+            var script = document.createElement('script');
+            script.src = scriptName;
+            script.onload = function() {
+                document.getElementById('test-scripts').innerHTML += '<br>' + scriptName + ' caricato correttamente';
+            };
+            script.onerror = function() {
+                document.getElementById('test-scripts').innerHTML += '<br>ERRORE caricando ' + scriptName;
+            };
+            document.body.appendChild(script);
+        }
+        
+        // Test dei nostri scripts
+        setTimeout(function() {
+            testScript('js/auto-responder.js');
+            testScript('js/clickable-questions.js');
+            testScript('js/script.js');
+        }, 1000);
+    </script>
+</body>
+</html>
