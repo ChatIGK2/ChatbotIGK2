@@ -11,9 +11,8 @@ body {
 
 .chatbot-container {
     display: flex;
-    height: 100vh;
     width: 100%;
-    max-width: 1400px;
+    max-width: 800px; /* Larghezza massima uguale al titolo */
     margin: 0 auto;
     background: transparent;
 }
@@ -64,8 +63,8 @@ body {
     width: 100%;
     padding: 20px;
     text-align: center;
-    margin-bottom: 0;
-    background: transparent;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2); /* Sfondo opaco al 20% */
 }
 
 .welcome-title {
