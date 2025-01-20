@@ -48,7 +48,7 @@ body {
 
 .logo-image {
     width: 100%;
-    max-width: 800px;
+    max-width: 300px; /* Ridotto per adattarsi meglio */
     height: auto;
     object-fit: contain;
 }
@@ -457,7 +457,7 @@ body {
     }
 
     .logo-image {
-        max-width: 180px;
+        max-width: 200px; /* Ulteriore riduzione per schermi più piccoli */
     }
 
     .side-buttons-container, .right-buttons-container {
@@ -499,7 +499,6 @@ body {
     }
 }
 
-/* Media query per schermi molto piccoli */
 @media screen and (max-width: 380px) {
     .side-button, .right-button {
         padding: 8px 12px;
@@ -508,7 +507,7 @@ body {
     }
 
     .logo-image {
-        max-width: 160px;
+        max-width: 150px; /* Ancora più piccolo per schermi molto piccoli */
     }
 
     .messages-container button {
