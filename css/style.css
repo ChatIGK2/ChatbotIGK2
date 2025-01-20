@@ -77,7 +77,7 @@ body {
 .welcome-message {
     font-size: 16px;
     line-height: 1.5;
-    color: #333;
+    color: #000; /* Cambiato il colore per migliorare la leggibilità */
     margin-bottom: 0;
 }
 
@@ -91,6 +91,7 @@ body {
     overflow-y: auto;
     background: transparent;
     margin-bottom: 0;
+    max-width: 800px; /* Allineato con il titolo */
 }
 
 .language-flags-container {
