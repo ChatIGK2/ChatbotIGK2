@@ -71,6 +71,7 @@ body {
     box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     top: 0;
+    background-color: #4CAF50;
 }
 
 .side-button:active,
@@ -80,7 +81,7 @@ body {
 }
 
 .side-button.docs-button {
-    background-color: rgba(128, 128, 128, 0.9);
+    background-color: #808080;
 }
 
 .side-button:hover,
@@ -89,11 +90,11 @@ body {
 }
 
 .side-button.video-button {
-    background-color: rgba(255, 0, 0, 0.9);
+    background-color: #ff0000;
 }
 
 .side-button.site-button {
-    background-color: rgba(0, 123, 255, 0.9);
+    background-color: #007bff;
 }
 
 .center-column {
@@ -186,6 +187,34 @@ body {
     margin-bottom: 20px;
 }
 
+.messages-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0;
+    color: #333;
+}
+
+.messages-container button:hover {
+    background-color: rgba(248, 249, 250, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.messages-container button:active {
+    top: 2px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
 .chat-input-container {
     display: flex;
     gap: 10px;
@@ -209,7 +238,7 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: rgba(0, 123, 255, 0.9);
+    background-color: #007bff;
     color: white;
     cursor: pointer;
     box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
@@ -327,11 +356,20 @@ body {
     border: 1px solid rgba(0, 123, 255, 0.2);
     font-size: 0.9em;
     line-height: 1.2;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0;
 }
 
 .clickable-question:hover {
     background-color: rgba(0, 123, 255, 0.2);
     transform: translateX(5px);
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.clickable-question:active {
+    top: 2px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .loading-overlay {
