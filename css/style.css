@@ -16,7 +16,6 @@ body {
 
 .chatbot-container {
     display: flex;
-    flex-direction: column;
     height: 100vh;
     width: 100%;
     max-width: 1400px;
@@ -33,30 +32,31 @@ body {
 }
 
 .left-column {
+    width: 250px;
+    background-color: transparent;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo-container {
     width: 100%;
-    margin-bottom: 20px;
     text-align: center;
 }
 
 .logo-image {
     width: 100%;
-    max-width: 240px;
+    max-width: 200px;
     height: auto;
     object-fit: contain;
 }
 
-.econanotherm-logo {
-    display: none;
-}
-
 .side-buttons-container {
     width: 100%;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -69,7 +69,7 @@ body {
 }
 
 .welcome-text-container {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -77,7 +77,7 @@ body {
 
 .welcome-title {
     font-size: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #007bff;
 }
 
@@ -461,43 +461,69 @@ body {
 /* Media Queries per dispositivi mobili */
 @media screen and (max-width: 768px) {
     .chatbot-container {
+        flex-direction: column;
         height: auto;
         min-height: 100vh;
+        padding: 10px;
     }
 
-    .top-buttons-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-        padding: 8px;
-    }
-
-    .side-button, .right-button {
-        padding: 10px 15px;
-        font-size: 13px;
-        margin: 4px 0;
-        min-height: 40px;
+    .left-column {
+        width: 100%;
+        padding: 0;
+        gap: 10px;
     }
 
     .logo-container {
-        margin: 10px 0;
+        margin-bottom: 0;
     }
 
     .logo-image {
         max-width: 180px;
     }
 
+    .side-buttons-container, .right-buttons-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .side-button, .right-button {
+        padding: 10px 15px;
+        font-size: 13px;
+        margin: 0;
+        min-height: 40px;
+    }
+
+    .right-column {
+        width: 100%;
+        padding: 10px;
+        order: 2;
+    }
+
+    .econanotherm-logo {
+        display: none;
+    }
+
+    .welcome-text-container {
+        padding: 5px 0;
+    }
+
+    .welcome-title {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .welcome-message {
+        font-size: 14px;
+    }
+
     .messages-container {
-        max-height: calc(100vh - 300px);
+        margin-top: 5px;
     }
 }
 
 /* Media query per schermi molto piccoli */
 @media screen and (max-width: 380px) {
-    .top-buttons-container {
-        gap: 6px;
-        padding: 6px;
-    }
-
     .side-button, .right-button {
         padding: 8px 12px;
         font-size: 12px;
@@ -506,6 +532,11 @@ body {
 
     .logo-image {
         max-width: 160px;
+    }
+
+    .messages-container button {
+        font-size: 12px;
+        padding: 8px 10px;
     }
 }
 
