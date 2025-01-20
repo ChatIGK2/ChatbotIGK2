@@ -12,24 +12,27 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background: url('../assets/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 /* Chatbot container */
 .chatbot-container {
-    display: grid;
-    grid-template-columns: 250px 1fr 250px;
+    display: flex;
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    background: transparent;
 }
 
 /* Left column */
 .left-column {
-    background-color: #f5f5f5;
+    width: 250px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background: rgba(245, 245, 245, 0.9);
 }
 
 .logo-container {
@@ -63,17 +66,18 @@ body {
 
 /* Center column */
 .center-column {
+    flex: 1;
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.9);
     position: relative;
 }
 
 .welcome-text-container {
     text-align: center;
     padding: 20px;
-    background-color: #f8f9fa;
+    background: rgba(248, 249, 250, 0.9);
 }
 
 .welcome-title {
@@ -87,31 +91,7 @@ body {
 }
 
 .language-flags-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px;
-    background-color: #fff;
-}
-
-.language-flag {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-.language-flag img {
-    width: 30px;
-    height: 20px;
-    border: 1px solid #ddd;
-}
-
-.language-flag span {
-    font-size: 12px;
+    display: none; /* Nascondiamo le bandiere nella chat */
 }
 
 .messages-container {
@@ -135,14 +115,14 @@ body {
 }
 
 .message.bot {
-    background-color: #f1f1f1;
+    background-color: rgba(241, 241, 241, 0.9);
     margin-right: auto;
 }
 
 .chat-input-container {
     padding: 20px;
-    background-color: #f8f9fa;
-    border-top: 1px solid #ddd;
+    background: rgba(248, 249, 250, 0.9);
+    border-top: 1px solid rgba(221, 221, 221, 0.5);
     display: flex;
     gap: 10px;
 }
@@ -166,11 +146,12 @@ body {
 
 /* Right column */
 .right-column {
-    background-color: #f5f5f5;
+    width: 250px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background: rgba(245, 245, 245, 0.9);
 }
 
 .econanotherm-logo {
@@ -201,73 +182,27 @@ body {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-    body {
-        overflow: auto;
-        height: auto;
-    }
-
     .chatbot-container {
-        grid-template-columns: 1fr;
-        height: auto;
-        min-height: 100vh;
+        flex-direction: column;
     }
 
     .left-column, .right-column {
+        width: 100%;
         padding: 10px;
     }
 
-    .logo-image, .econanotherm-logo {
-        max-width: 150px;
-    }
-
     .center-column {
-        height: auto;
-        min-height: 60vh;
+        height: 0;
+        flex: 1;
     }
 
     .messages-container {
-        height: auto;
-        min-height: 300px;
-        max-height: 50vh;
+        height: 100%;
     }
 
     .chat-input-container {
         position: sticky;
         bottom: 0;
-        background-color: white;
-        z-index: 1000;
-        padding: 10px;
-    }
-
-    .welcome-text-container {
-        padding: 10px;
-    }
-
-    .welcome-title {
-        font-size: 20px;
-    }
-
-    .welcome-message {
-        font-size: 14px;
-    }
-
-    .language-flags-container {
-        flex-wrap: wrap;
-        padding: 5px;
-    }
-
-    .language-flag img {
-        width: 25px;
-        height: 17px;
-    }
-
-    .message {
-        max-width: 90%;
-    }
-
-    .side-button, .right-button {
-        font-size: 14px;
-        padding: 8px;
     }
 }
 
