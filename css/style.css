@@ -71,6 +71,9 @@ body {
     font-size: 24px;
     margin-bottom: 15px;
     color: #007bff;
+    white-space: nowrap; /* Impedisce il wrap del testo */
+    overflow: hidden; /* Nasconde il testo in eccesso */
+    text-overflow: ellipsis; /* Aggiunge i puntini di sospensione se il testo è troppo lungo */
 }
 
 .welcome-message {
