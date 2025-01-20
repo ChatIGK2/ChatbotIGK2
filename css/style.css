@@ -16,6 +16,7 @@ body {
 
 .chatbot-container {
     display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 100%;
     max-width: 1400px;
@@ -23,13 +24,17 @@ body {
     background-color: white;
 }
 
+.top-buttons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
 .left-column {
-    width: 250px;
-    background-color: transparent;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
 .logo-container {
@@ -40,9 +45,13 @@ body {
 
 .logo-image {
     width: 100%;
-    max-width: 200px;
+    max-width: 240px;
     height: auto;
     object-fit: contain;
+}
+
+.econanotherm-logo {
+    display: none;
 }
 
 .side-buttons-container {
@@ -56,7 +65,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    min-width: 0; /* Previene overflow del contenuto */
+    min-width: 0;
 }
 
 .welcome-text-container {
@@ -80,7 +89,6 @@ body {
 
 .language-flags-container {
     display: none !important;
-    /* Nasconde il contenitore delle bandiere ma mantiene la funzionalità */
     display: flex;
     align-items: center;
     gap: 60px;
@@ -94,7 +102,6 @@ body {
 .language-flag {
     border: none;
     display: none !important;
-    /* Nasconde i singoli pulsanti delle bandiere ma mantiene la funzionalità */
     background-color: transparent;
     color: black;
     border: none;
@@ -138,7 +145,6 @@ body {
     gap: 10px;
     overflow-y: auto;
     max-height: calc(100vh - 250px);
-    /* Altezza massima con scroll */
 }
 
 .messages-container::-webkit-scrollbar {
@@ -231,13 +237,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.econanotherm-logo {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 20px;
 }
 
 .right-buttons-container {
@@ -462,92 +461,51 @@ body {
 /* Media Queries per dispositivi mobili */
 @media screen and (max-width: 768px) {
     .chatbot-container {
-        flex-direction: column;
         height: auto;
         min-height: 100vh;
     }
 
-    .left-column, .right-column {
-        width: 100%;
-        padding: 15px;
+    .top-buttons-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .side-button, .right-button {
+        padding: 10px 15px;
+        font-size: 13px;
+        margin: 4px 0;
+        min-height: 40px;
     }
 
     .logo-container {
-        margin-bottom: 15px;
+        margin: 10px 0;
     }
 
     .logo-image {
-        max-width: 150px;
-    }
-
-    .side-buttons-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        margin-bottom: 15px;
-    }
-
-    .welcome-text-container {
-        padding: 15px;
-    }
-
-    .welcome-title {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    .welcome-message {
-        font-size: 14px;
+        max-width: 180px;
     }
 
     .messages-container {
-        max-height: calc(100vh - 400px);
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-        padding: 10px;
-    }
-
-    .messages-container button {
-        font-size: 13px;
-        padding: 8px 12px;
-    }
-
-    .right-buttons-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        width: 100%;
-        padding: 0 15px;
-    }
-
-    .right-button {
-        margin: 0;
+        max-height: calc(100vh - 300px);
     }
 }
 
 /* Media query per schermi molto piccoli */
 @media screen and (max-width: 380px) {
-    .side-buttons-container,
-    .right-buttons-container {
-        grid-template-columns: repeat(2, 1fr);
+    .top-buttons-container {
+        gap: 6px;
+        padding: 6px;
     }
 
-    .messages-container {
-        grid-template-columns: 1fr;
-        max-height: calc(100vh - 350px);
-    }
-
-    .welcome-title {
-        font-size: 18px;
-    }
-
-    .welcome-message {
-        font-size: 13px;
-    }
-
-    .messages-container button {
+    .side-button, .right-button {
+        padding: 8px 12px;
         font-size: 12px;
-        padding: 8px 10px;
+        min-height: 36px;
+    }
+
+    .logo-image {
+        max-width: 160px;
     }
 }
 
