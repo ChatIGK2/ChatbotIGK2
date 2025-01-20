@@ -23,27 +23,34 @@ body {
     background-color: white;
 }
 
-.top-buttons-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 10px;
+.center-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 20px;
     background-color: white;
 }
 
 .left-column {
     width: 250px;
-    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.right-column {
+    width: 250px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
 }
 
 .logo-container {
     width: 100%;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .logo-image {
@@ -53,31 +60,37 @@ body {
     object-fit: contain;
 }
 
-.side-buttons-container {
+.econanotherm-logo {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
-.center-column {
-    flex: 1;
+.side-buttons-container {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    min-width: 0;
+    gap: 15px;
+    width: 100%;
+}
+
+.right-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .welcome-text-container {
-    padding: 10px;
+    padding: 20px;
     text-align: center;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    margin-bottom: 20px;
 }
 
 .welcome-title {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #007bff;
 }
 
@@ -227,24 +240,6 @@ body {
 
 .send-button:hover {
     background-color: #0056b3;
-}
-
-.right-column {
-    width: 250px;
-    background-color: transparent;
-    border-left: 1px solid #e9ecef;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.right-buttons-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    width: 100%;
-    padding: 0 15px;
 }
 
 .clickable-questions {
@@ -485,6 +480,7 @@ body {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
+        margin-bottom: 10px;
     }
 
     .side-button, .right-button {
@@ -506,6 +502,7 @@ body {
 
     .welcome-text-container {
         padding: 5px 0;
+        margin-bottom: 10px;
     }
 
     .welcome-title {
