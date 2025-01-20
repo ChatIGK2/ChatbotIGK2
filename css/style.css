@@ -3,14 +3,10 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     min-height: 100vh;
-    background: transparent;
-}
-
-.language-selector {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
+    background-image: url('../assets/images/sfondo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .chatbot-container {
@@ -34,19 +30,12 @@ body {
     margin: 0 auto;
 }
 
-.left-column {
+.left-column, .right-column {
     width: 250px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 20px;
-    background: transparent;
-}
-
-.right-column {
-    width: 250px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
     background: transparent;
 }
 
@@ -64,14 +53,7 @@ body {
     object-fit: contain;
 }
 
-.side-buttons-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-}
-
-.right-buttons-container {
+.side-buttons-container, .right-buttons-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
