@@ -1,117 +1,150 @@
-/* Stili base */
-html, body {
+/* Base styles */
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
+/* Chatbot container */
 .chatbot-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
     height: 100vh;
     width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
-    background: #fff;
 }
 
-/* Colonne principali */
+/* Left column */
 .left-column {
-    flex: 0 0 auto;
-    padding: 10px;
+    background-color: #f5f5f5;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
-.center-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    padding: 10px;
-    min-height: 0;
-}
-
-.right-column {
-    flex: 0 0 auto;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Logo e immagini */
 .logo-container {
     text-align: center;
 }
 
 .logo-image {
-    max-height: 60px;
-    width: auto;
+    max-width: 200px;
+    height: auto;
 }
 
-.econanotherm-logo {
-    max-height: 40px;
-    width: auto;
-}
-
-/* Pulsanti */
-.side-buttons-container,
-.right-buttons-container {
+.side-buttons-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
 }
 
-.side-button,
-.right-button {
+.side-button {
     padding: 10px;
     border: none;
     border-radius: 5px;
+    background-color: #007bff;
+    color: white;
     cursor: pointer;
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
-/* Area messaggi */
+.side-button:hover {
+    background-color: #0056b3;
+}
+
+/* Center column */
+.center-column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: white;
+    position: relative;
+}
+
 .welcome-text-container {
     text-align: center;
-    margin-bottom: 15px;
+    padding: 20px;
+    background-color: #f8f9fa;
 }
 
 .welcome-title {
     font-size: 24px;
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
 }
 
 .welcome-message {
     font-size: 16px;
-    margin: 0;
+    color: #666;
+}
+
+.language-flags-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.language-flag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.language-flag img {
+    width: 30px;
+    height: 20px;
+    border: 1px solid #ddd;
+}
+
+.language-flag span {
+    font-size: 12px;
 }
 
 .messages-container {
     flex: 1;
     overflow-y: auto;
+    padding: 20px;
+}
+
+.message {
+    margin-bottom: 15px;
     padding: 10px;
-    margin: 10px 0;
-    min-height: 0;
+    border-radius: 5px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.message.user {
+    background-color: #007bff;
+    color: white;
+    margin-left: auto;
+}
+
+.message.bot {
+    background-color: #f1f1f1;
+    margin-right: auto;
 }
 
 .chat-input-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
     display: flex;
     gap: 10px;
-    padding: 10px;
-    background: #fff;
-    border-top: 1px solid #eee;
 }
 
 .chat-input {
@@ -126,275 +159,161 @@ html, body {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    background: #007bff;
+    background-color: #007bff;
     color: white;
-}
-
-/* Bandiere lingue */
-.language-flags-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 10px 0;
-}
-
-.language-flag {
     cursor: pointer;
-    border: none;
-    background: none;
-    padding: 5px;
 }
 
-.language-flag img {
-    width: 30px;
+/* Right column */
+.right-column {
+    background-color: #f5f5f5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.econanotherm-logo {
+    max-width: 200px;
     height: auto;
+    margin: 0 auto;
 }
 
-/* Media query per mobile */
-@media screen and (max-width: 768px) {
+.right-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.right-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.right-button:hover {
+    background-color: #218838;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
     body {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
+        overflow: auto;
+        height: auto;
     }
 
     .chatbot-container {
-        height: 100%;
-        max-height: 100%;
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100vh;
     }
 
-    .left-column {
-        padding: 5px;
+    .left-column, .right-column {
+        padding: 10px;
     }
 
-    .logo-image {
-        max-height: 40px;
-    }
-
-    .side-buttons-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .side-button {
-        flex: 0 1 auto;
-        font-size: 12px;
-        padding: 8px;
-        white-space: nowrap;
+    .logo-image, .econanotherm-logo {
+        max-width: 150px;
     }
 
     .center-column {
-        padding: 5px;
-    }
-
-    .welcome-title {
-        font-size: 18px;
-    }
-
-    .welcome-message {
-        font-size: 14px;
+        height: auto;
+        min-height: 60vh;
     }
 
     .messages-container {
-        margin: 5px 0;
-        padding: 5px;
+        height: auto;
+        min-height: 300px;
+        max-height: 50vh;
     }
 
     .chat-input-container {
-        padding: 5px;
-    }
-
-    .chat-input {
-        font-size: 16px;
-        padding: 8px;
-    }
-
-    .right-column {
-        padding: 5px;
-    }
-
-    .right-buttons-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .right-button {
-        flex: 0 1 auto;
-        font-size: 12px;
-        padding: 8px;
-        white-space: nowrap;
-    }
-
-    .econanotherm-logo {
-        max-height: 30px;
-    }
-}
-
-/* Fix per iOS */
-@supports (-webkit-touch-callout: none) {
-    .chatbot-container {
-        height: -webkit-fill-available;
-    }
-}
-
-/* Media Queries per dispositivi mobili */
-@media screen and (max-width: 768px) {
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    .chatbot-container {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        height: 100vh;
-        max-height: 100vh;
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-    }
-
-    .left-column {
-        grid-row: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 5px;
-        background: #fff;
-    }
-
-    .logo-container {
-        margin: 5px 0;
-    }
-
-    .logo-image {
-        height: 40px;
-        width: auto;
-    }
-
-    .side-buttons-container {
-        display: flex;
-        gap: 10px;
-        padding: 5px;
-    }
-
-    .side-button {
-        padding: 8px;
-        font-size: 12px;
-        white-space: nowrap;
-    }
-
-    .center-column {
-        grid-row: 2;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        padding: 5px;
-        overflow: hidden;
+        position: sticky;
+        bottom: 0;
+        background-color: white;
+        z-index: 1000;
+        padding: 10px;
     }
 
     .welcome-text-container {
-        flex-shrink: 0;
-        padding: 5px;
+        padding: 10px;
     }
 
     .welcome-title {
-        font-size: 18px;
-        margin: 0;
+        font-size: 20px;
     }
 
     .welcome-message {
         font-size: 14px;
-        margin: 5px 0;
     }
 
     .language-flags-container {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        padding: 5px;
-        flex-shrink: 0;
-    }
-
-    .messages-container {
-        flex: 1;
-        overflow-y: auto;
-        padding: 5px;
-        margin: 5px 0;
-    }
-
-    .chat-input-container {
-        display: flex;
-        gap: 5px;
-        padding: 5px;
-        background: #fff;
-        position: sticky;
-        bottom: 0;
-    }
-
-    .chat-input {
-        flex: 1;
-        height: 40px;
-        font-size: 16px;
-        padding: 8px;
-    }
-
-    .send-button {
-        padding: 8px 15px;
-        font-size: 14px;
-        white-space: nowrap;
-    }
-
-    .right-column {
-        grid-row: 3;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 5px;
-        background: #fff;
-    }
-
-    .econanotherm-logo {
-        height: 30px;
-        width: auto;
-        margin: 5px 0;
-    }
-
-    .right-buttons-container {
-        display: flex;
-        gap: 10px;
-        padding: 5px;
-    }
-
-    .right-button {
-        padding: 8px;
-        font-size: 12px;
-        white-space: nowrap;
-    }
-
-    .questions-buttons {
-        display: flex;
         flex-wrap: wrap;
-        gap: 5px;
         padding: 5px;
     }
 
-    .question-button {
-        font-size: 12px;
+    .language-flag img {
+        width: 25px;
+        height: 17px;
+    }
+
+    .message {
+        max-width: 90%;
+    }
+
+    .side-button, .right-button {
+        font-size: 14px;
         padding: 8px;
-        white-space: nowrap;
     }
 }
 
-/* Fix per iOS */
-@supports (-webkit-touch-callout: none) {
-    .chatbot-container {
-        height: -webkit-fill-available;
-    }
+/* Loading overlay */
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error container */
+.error-container {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 5px;
+    z-index: 9999;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
