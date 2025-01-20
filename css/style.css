@@ -81,7 +81,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1);
+    background: #E0FFFF;
+    opacity: 0.2;
     transform: translateX(-100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: -1;
@@ -92,9 +93,9 @@ body {
     transform: translateX(0);
 }
 
-.side-button:active,
-.right-button:active {
-    transform: scale(0.95);
+.side-button:hover,
+.right-button:hover {
+    background-color: inherit; /* Mantiene il colore originale del pulsante */
 }
 
 .side-button {
@@ -135,11 +136,6 @@ body {
 .side-button:hover,
 .right-button:hover {
     animation: none;
-}
-
-.side-button:hover,
-.right-button:hover {
-    background-color: #45a049;
 }
 
 .center-column {
