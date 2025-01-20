@@ -62,26 +62,43 @@ body {
 
 .side-button,
 .right-button {
-    background-color: #4CAF50;
-    color: white;
+    padding: 12px 20px;
     border: none;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.9rem;
-    border-radius: 4px;
+    border-radius: 8px;
+    color: white;
     cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-    white-space: normal;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.side-button:hover,
-.right-button:hover {
-    background-color: #45a049;
+.side-button::before,
+.right-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.side-button:hover::before,
+.right-button:hover::before {
+    transform: translateX(0);
+}
+
+.side-button:active,
+.right-button:active {
+    transform: scale(0.95);
+}
+
+.side-button {
+    background-color: #4CAF50;
 }
 
 .side-button.docs-button {
@@ -94,6 +111,35 @@ body {
 
 .right-button.site-button {
     background-color: #007bff;
+}
+
+@keyframes pulseButton {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.side-button,
+.right-button {
+    animation: pulseButton 2s infinite;
+}
+
+.side-button:hover,
+.right-button:hover {
+    animation: none;
+}
+
+.side-button:hover,
+.right-button:hover {
+    background-color: #45a049;
 }
 
 .center-column {
@@ -126,7 +172,8 @@ body {
 }
 
 .language-flags-container {
-    display: none !important; /* Nasconde il contenitore delle bandiere ma mantiene la funzionalità */
+    display: none !important;
+    /* Nasconde il contenitore delle bandiere ma mantiene la funzionalità */
     display: flex;
     align-items: center;
     gap: 60px;
@@ -139,7 +186,8 @@ body {
 
 .language-flag {
     border: none;
-    display: none !important; /* Nasconde i singoli pulsanti delle bandiere ma mantiene la funzionalità */
+    display: none !important;
+    /* Nasconde i singoli pulsanti delle bandiere ma mantiene la funzionalità */
     background-color: transparent;
     color: black;
     border: none;
@@ -181,7 +229,27 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    overflow: hidden;
+    overflow-y: auto;
+    max-height: calc(100vh - 250px);
+    /* Altezza massima con scroll */
+}
+
+.messages-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+    background: rgba(241, 241, 241, 0.5);
+    border-radius: 4px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 123, 255, 0.5);
+    border-radius: 4px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 123, 255, 0.7);
 }
 
 .messages-container button {
@@ -211,7 +279,9 @@ body {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.message, .bot-message, .user-message {
+.message,
+.bot-message,
+.user-message {
     display: none;
 }
 
@@ -352,8 +422,13 @@ body {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .error-container {
@@ -370,16 +445,24 @@ body {
     color: white;
     padding: 10px 20px;
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     animation: slideIn 0.3s ease-out;
 }
 
 @keyframes slideIn {
-    from { transform: translateY(-100%); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Media Queries per dispositivi mobili */
+
 @media screen and (max-width: 768px) {
     .chatbot-container {
         flex-direction: column;
@@ -387,7 +470,8 @@ body {
         padding: 10px;
     }
 
-    .left-column, .right-column {
+    .left-column,
+    .right-column {
         width: 100%;
         height: auto;
         padding: 10px;
@@ -422,18 +506,21 @@ body {
     }
 
     .chat-input {
-        font-size: 16px; /* Dimensione minima consigliata per input su mobile */
+        font-size: 16px;
+        /* Dimensione minima consigliata per input su mobile */
         padding: 8px;
-        min-height: 40px; /* Altezza minima per una migliore usabilità */
+        min-height: 40px;
+        /* Altezza minima per una migliore usabilità */
     }
 }
 
 /* Fix per l'altezza su iOS */
+
 @supports (-webkit-touch-callout: none) {
     .chatbot-container {
         height: -webkit-fill-available;
     }
-    
+
     .center-column {
         height: calc(100vh - 200px);
         height: calc(-webkit-fill-available - 200px);
@@ -441,6 +528,7 @@ body {
 }
 
 /* Media query per schermi molto piccoli (es. iPhone SE) */
+
 @media screen and (max-width: 380px) {
     .side-buttons-container {
         flex-direction: column;
@@ -453,56 +541,4 @@ body {
     .chat-input {
         font-size: 0.8rem;
     }
-}
-
-/* Aggiunta di stili per i pulsanti */
-.side-button, .right-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.9rem;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-    white-space: normal;
-}
-
-.side-button:hover, .right-button:hover {
-    background-color: #45a049;
-}
-
-.side-button.docs-button {
-    background-color: #808080;
-}
-
-.right-button.video-button {
-    background-color: #ff0000;
-}
-
-.right-button.site-button {
-    background-color: #007bff;
-}
-
-/* Aggiunta di stili per le domande */
-.clickable-question {
-    background-color: rgba(0, 123, 255, 0.1);
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 123, 255, 0.2);
-    font-size: 0.9em;
-    line-height: 1.2;
-}
-
-.clickable-question:hover {
-    background-color: rgba(0, 123, 255, 0.2);
-    transform: translateX(5px);
 }
